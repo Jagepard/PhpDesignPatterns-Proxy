@@ -1,0 +1,14 @@
+#! usr/bin/env php
+<?php
+
+namespace Structural\Proxy;
+
+require_once 'vendor/autoload.php';
+
+$proxy = new SubjectProxy();
+
+$proxy->setArray('key1', 'value1');
+$proxy->setArray('key2', 'value2');
+$proxy->setArray('key3', 'value3');
+
+printf("%s\n", $proxy->getArray());
