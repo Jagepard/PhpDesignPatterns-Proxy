@@ -1,11 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
- * Date: 06.04.18
- * Time: 12:43
- *
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2018, Korotkov Danila
- * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
+ * @license   https://mit-license.org/ MIT
  */
 
 namespace Structural\Proxy;
@@ -18,7 +17,7 @@ class SubjectProxy implements SubjectInterface
 {
 
     /**
-     * @var null|Subject
+     * @var null|SubjectInterface
      */
     protected $subject = null;
 
@@ -26,34 +25,25 @@ class SubjectProxy implements SubjectInterface
      * @param string $key
      * @param string $value
      */
-    public function setArray(string $key, string $value): void
+    public function setAssoc(string $key, string $value): void
     {
-        if (null == $this->getSubject()) {
-            $this->setSubject();
+        if (!$this->subject instanceof SubjectInterface) {
+            $this->subject = new Subject();
         }
 
-        $this->getSubject()->setArray($value, $key);
+        $this->subject->setAssoc($key, $value);
     }
 
-    public function getArray(): string
+    public function getAssoc(): array
     {
-        if (null == $this->getSubject()) {
-            $this->setSubject();
-        }
-
-        return json_encode($this->getSubject()->getArray());
+        return $this->subject->getAssoc();
     }
 
     /**
-     * @return null|Subject
+     * @return string
      */
-    public function getSubject(): ?Subject
+    public function getJson(): string
     {
-        return $this->subject;
-    }
-
-    public function setSubject(): void
-    {
-        $this->subject = new Subject();
+        return json_encode($this->getAssoc());
     }
 }

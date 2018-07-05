@@ -7,8 +7,8 @@ require_once 'vendor/autoload.php';
 
 $proxy = new SubjectProxy();
 
-$proxy->setArray('key1', 'value1');
-$proxy->setArray('key2', 'value2');
-$proxy->setArray('key3', 'value3');
+$proxy->setAssoc('key1', 'value1');
+$proxy->setAssoc('key2', 'value2');
+$proxy->setAssoc('key3', 'value3');
 
-printf("%s\n", $proxy->getArray());
+printf("%s\n", $proxy->getJson());

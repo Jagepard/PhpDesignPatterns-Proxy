@@ -1,11 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
- * Date: 06.04.18
- * Time: 12:20
- *
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2018, Korotkov Danila
- * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
+ * @license   https://mit-license.org/ MIT
  */
 
 namespace Structural\Proxy;
@@ -26,14 +25,9 @@ class Subject implements SubjectInterface
      * @param string $value
      * @param string $key
      */
-    public function setArray(string $value, string $key): void
+    public function setAssoc(string $key, string $value): void
     {
-        $this->setAssoc(array_merge($this->getAssoc(), [$key => $value]));
-    }
-
-    public function getArray()
-    {
-        return $this->getAssoc();
+        $this->assoc[$key] = $value;
     }
 
     /**
@@ -42,13 +36,5 @@ class Subject implements SubjectInterface
     public function getAssoc(): array
     {
         return $this->assoc;
-    }
-
-    /**
-     * @param array $assoc
-     */
-    public function setAssoc(array $assoc): void
-    {
-        $this->assoc = $assoc;
     }
 }
