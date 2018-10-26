@@ -7,3 +7,5 @@
 
 # Proxy | [API](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/docs.md "Documentation API")
 Заместитель
+
+![Proxy](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/UML.png)
