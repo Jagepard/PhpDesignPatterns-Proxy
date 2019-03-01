@@ -15,11 +15,10 @@ namespace Structural\Proxy;
  */
 class SubjectProxy implements SubjectInterface
 {
-
     /**
      * @var null|SubjectInterface
      */
-    protected $subject = null;
+    private $subject = null;
 
     /**
      * @param string $key
@@ -27,16 +26,16 @@ class SubjectProxy implements SubjectInterface
      */
     public function setAssoc(string $key, string $value): void
     {
-        if (!$this->subject instanceof SubjectInterface) {
-            $this->subject = new Subject();
+        if (!$this->getSubject() instanceof SubjectInterface) {
+            $this->setSubject(new Subject());
         }
 
-        $this->subject->setAssoc($key, $value);
+        $this->getSubject()->setAssoc($key, $value);
     }
 
     public function getAssoc(): array
     {
-        return $this->subject->getAssoc();
+        return $this->getSubject()->getAssoc();
     }
 
     /**
@@ -44,6 +43,22 @@ class SubjectProxy implements SubjectInterface
      */
     public function getJson(): string
     {
-        return json_encode($this->getAssoc());
+        return \json_encode($this->getAssoc());
+    }
+
+    /**
+     * @return SubjectInterface|null
+     */
+    public function getSubject(): ?SubjectInterface
+    {
+        return $this->subject;
+    }
+
+    /**
+     * @param SubjectInterface|null $subject
+     */
+    public function setSubject(?SubjectInterface $subject): void
+    {
+        $this->subject = $subject;
     }
 }
