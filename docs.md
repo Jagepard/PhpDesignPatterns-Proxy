@@ -2,7 +2,7 @@
 
 - [\Structural\Proxy\SubjectInterface (interface)](#interface-structuralproxysubjectinterface)
 - [\Structural\Proxy\Subject](#class-structuralproxysubject)
-- [\Structural\Proxy\SubjectProxy](#class-structuralproxysubjectproxy)
+- [\Structural\Proxy\JsonProxy](#class-structuralproxyjsonproxy)
 
 <hr />
 
@@ -30,15 +30,17 @@
 
 <hr />
 
-### Class: \Structural\Proxy\SubjectProxy
+### Class: \Structural\Proxy\JsonProxy
 
-> Class SubjectProxy
+> Class JsonProxy
 
 | Visibility | Function |
 |:-----------|:---------|
 | public | <strong>getAssoc()</strong> : <em>mixed</em> |
 | public | <strong>getJson()</strong> : <em>string</em> |
+| public | <strong>getSubject()</strong> : <em>[\Structural\Proxy\SubjectInterface](#interface-structuralproxysubjectinterface)/null</em> |
 | public | <strong>setAssoc(</strong><em>\string</em> <strong>$key</strong>, <em>\string</em> <strong>$value</strong>)</strong> : <em>void</em> |
+| public | <strong>setSubject(</strong><em>[\Structural\Proxy\SubjectInterface](#interface-structuralproxysubjectinterface)/null/[\Structural\Proxy\SubjectInterface](#interface-structuralproxysubjectinterface)</em> <strong>$subject</strong>)</strong> : <em>void</em> |
 
 *This class implements [\Structural\Proxy\SubjectInterface](#interface-structuralproxysubjectinterface)*
 

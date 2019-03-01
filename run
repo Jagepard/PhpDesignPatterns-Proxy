@@ -5,7 +5,7 @@ namespace Structural\Proxy;
 
 require_once 'vendor/autoload.php';
 
-$proxy = new SubjectProxy();
+$proxy = new JsonProxy();
 
 $proxy->setAssoc('key1', 'value1');
 $proxy->setAssoc('key2', 'value2');

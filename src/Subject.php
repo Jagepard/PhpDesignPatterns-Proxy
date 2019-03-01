@@ -15,11 +15,10 @@ namespace Structural\Proxy;
  */
 class Subject implements SubjectInterface
 {
-
     /**
      * @var array
      */
-    protected $assoc = [];
+    private $assoc = [];
 
     /**
      * @param string $value
