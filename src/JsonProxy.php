@@ -13,7 +13,7 @@ namespace Structural\Proxy;
  * Class SubjectProxy
  * @package Structural\Proxy
  */
-class SubjectProxy implements SubjectInterface
+class JsonProxy implements SubjectInterface
 {
     /**
      * @var null|SubjectInterface
