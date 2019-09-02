@@ -7,10 +7,6 @@
 
 namespace Structural\Proxy;
 
-/**
- * Interface SubjectInterface
- * @package Structural\Proxy
- */
 interface SubjectInterface
 {
     /**
