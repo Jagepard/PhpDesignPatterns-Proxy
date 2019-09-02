@@ -12,9 +12,6 @@ namespace Structural\Proxy\Tests;
 use Structural\Proxy\JsonProxy;
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
-/**
- * Class ProxyTest
- */
 class ProxyTest extends PHPUnit_Framework_TestCase
 {
     /**

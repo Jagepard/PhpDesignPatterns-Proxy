@@ -9,10 +9,6 @@ declare(strict_types=1);
 
 namespace Structural\Proxy;
 
-/**
- * Class JsonProxy
- * @package Structural\Proxy
- */
 class JsonProxy implements SubjectInterface
 {
     /**
