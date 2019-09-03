@@ -6,6 +6,8 @@
 -----
 
 # Proxy | [API](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/docs.md "Documentation API")
+```php run``` Запустить исполнение шаблона в терминале
+
 Заместитель
 
 ![Proxy](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/UML.png)
