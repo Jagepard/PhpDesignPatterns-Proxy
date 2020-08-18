@@ -3,58 +3,32 @@
 declare(strict_types=1);
 
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Structural\Proxy;
 
 class JsonProxy implements SubjectInterface
 {
-    /**
-     * @var null|SubjectInterface
-     */
-    private $subject = null;
+    private ?SubjectInterface $subject;
 
-    /**
-     * @param string $key
-     * @param string $value
-     */
-    public function setAssoc(string $key, string $value): void
+    public function setItem(string $key, string $value): void
     {
-        if (!$this->getSubject() instanceof SubjectInterface) {
-            $this->setSubject(new Subject());
+        if (!isset($this->subject)) {
+            $this->subject = new Subject();
         }
 
-        $this->getSubject()->setAssoc($key, $value);
+        $this->subject->setItem($key, $value);
     }
 
-    public function getAssoc(): array
+    public function getArray(): array
     {
-        return $this->getSubject()->getAssoc();
+        return $this->subject->getArray();
     }
 
-    /**
-     * @return string
-     */
     public function getJson(): string
     {
-        return \json_encode($this->getAssoc());
-    }
-
-    /**
-     * @return SubjectInterface|null
-     */
-    public function getSubject(): ?SubjectInterface
-    {
-        return $this->subject;
-    }
-
-    /**
-     * @param SubjectInterface|null $subject
-     */
-    public function setSubject(?SubjectInterface $subject): void
-    {
-        $this->subject = $subject;
+        return \json_encode($this->getArray());
     }
 }

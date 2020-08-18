@@ -6,8 +6,19 @@
 -----
 
 # Proxy | [API](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/docs.md "Documentation API")
-```php run``` Запустить исполнение шаблона в терминале
 
-Заместитель
+```php main.php``` execute in terminal
 
-![Proxy](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/UML.png)
+## Result:
+```
+Subject: 
+Array
+(
+    [key1] => value1
+    [key2] => value2
+    [key3] => value3
+)
+
+JsonProxy: 
+{"key1":"value1","key2":"value2","key3":"value3"}
+```
