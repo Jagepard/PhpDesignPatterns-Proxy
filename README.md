@@ -6,6 +6,10 @@
 -----
 
 # Proxy | [API](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/docs.md "Documentation API")
-Заместитель
 
-![Proxy](https://github.com/Jagepard/PhpDesignPatterns-Proxy/blob/master/UML.png)
+```php main.php``` execute in terminal
+
+## Result:
+```
+{"key1":"value1","key2":"value2","key3":"value3"}
+```
