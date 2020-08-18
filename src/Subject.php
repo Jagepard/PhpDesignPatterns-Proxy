@@ -3,33 +3,23 @@
 declare(strict_types=1);
 
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Structural\Proxy;
 
 class Subject implements SubjectInterface
 {
-    /**
-     * @var array
-     */
-    private $assoc = [];
+    private array $array = [];
 
-    /**
-     * @param string $value
-     * @param string $key
-     */
-    public function setAssoc(string $key, string $value): void
+    public function setItem(string $key, string $value): void
     {
-        $this->assoc[$key] = $value;
+        $this->array[$key] = $value;
     }
 
-    /**
-     * @return array
-     */
-    public function getAssoc(): array
+    public function getArray(): array
     {
-        return $this->assoc;
+        return $this->array;
     }
 }
