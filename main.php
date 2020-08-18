@@ -5,10 +5,18 @@ namespace Structural\Proxy;
 
 require_once "vendor/autoload.php";
 
-$proxy = new JsonProxy();
+$subject = new Subject();
 
-$proxy->setAssoc("key1", "value1");
-$proxy->setAssoc("key2", "value2");
-$proxy->setAssoc("key3", "value3");
+$subject->setItem("key1", "value1");
+$subject->setItem("key2", "value2");
+$subject->setItem("key3", "value3");
 
-printf("%s\n", $proxy->getJson());
+printf("%s\n%s\n", "Subject: ", print_r($subject->getArray(), true));
+
+$proxy  = new JsonProxy();
+
+$proxy->setItem("key1", "value1");
+$proxy->setItem("key2", "value2");
+$proxy->setItem("key3", "value3");
+
+printf("%s\n%s\n", "JsonProxy: ", $proxy->getJson());
