@@ -40,6 +40,18 @@ class JsonProxy implements SubjectInterface
      */
     public function getArray(): array
     {
-        return \json_encode($this->subject->getArray());
+        return $this->subject->getArray();
+    }
+
+    /**
+     * Gets data in the format JSON
+     * ----------------------------
+     * Получает данные в формате JSON
+     *
+     * @return string
+     */
+    public function getJson(): string
+    {
+        return \json_encode($this->getArray());
     }
 }
