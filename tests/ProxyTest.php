@@ -27,6 +27,6 @@ class ProxyTest extends PHPUnit_Framework_TestCase
         $this->proxy->setItem('key2', 'value2');
         $this->proxy->setItem('key3', 'value3');
 
-        $this->assertEquals('{"key1":"value1","key2":"value2","key3":"value3"}', $this->proxy->getArray());
+        $this->assertEquals('{"key1":"value1","key2":"value2","key3":"value3"}', $this->proxy->getJson());
     }
 }
