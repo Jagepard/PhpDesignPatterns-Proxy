@@ -13,6 +13,15 @@ class JsonProxy implements SubjectInterface
 {
     private ?SubjectInterface $subject;
 
+    /**
+     * Sets an item
+     * ------------
+     * Устанавливает элемент
+     *
+     * @param  string $key
+     * @param  string $value
+     * @return void
+     */
     public function setItem(string $key, string $value): void
     {
         if (!isset($this->subject)) {
@@ -22,13 +31,15 @@ class JsonProxy implements SubjectInterface
         $this->subject->setItem($key, $value);
     }
 
+    /**
+     * Gets an array of data
+     * ---------------------
+     * Получает массив данных
+     *
+     * @return array
+     */
     public function getArray(): array
     {
-        return $this->subject->getArray();
-    }
-
-    public function getJson(): string
-    {
-        return \json_encode($this->getArray());
+        return \json_encode($this->subject->getArray());
     }
 }
