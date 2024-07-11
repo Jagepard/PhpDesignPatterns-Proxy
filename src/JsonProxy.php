@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Structural\Proxy;
 
-class JsonProxy implements SubjectInterface
+class JsonProxy
 {
     private ?SubjectInterface $subject;
 
@@ -32,18 +32,6 @@ class JsonProxy implements SubjectInterface
     }
 
     /**
-     * Gets an array of data
-     * ---------------------
-     * Получает массив данных
-     *
-     * @return array
-     */
-    public function getArray(): array
-    {
-        return $this->subject->getArray();
-    }
-
-    /**
      * Gets data in the format JSON
      * ----------------------------
      * Получает данные в формате JSON
@@ -52,6 +40,6 @@ class JsonProxy implements SubjectInterface
      */
     public function getJson(): string
     {
-        return \json_encode($this->getArray());
+        return \json_encode($this->subject->getArray());
     }
 }
